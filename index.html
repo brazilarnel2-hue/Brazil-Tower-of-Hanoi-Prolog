@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="tl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Tower of Hanoi - Prolog</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="app">
+    <h1>Tower of Hanoi</h1>
+    <p class="sub">Laruin mo mismo, o ipa-solve sa Prolog.</p>
+
+    <section class="stats">
+      <div class="stat"><span>Moves</span><strong id="moves">0</strong></div>
+      <div class="stat"><span>Minimum</span><strong id="best">7</strong></div>
+      <div class="stat"><span>Time</span><strong id="time">0:00</strong></div>
+      <div class="stat"><span>Speed</span><strong id="speedLabel">Normal</strong></div>
+      <div class="stat"><span>Status</span><strong id="state">Ready</strong></div>
+      <div class="stat"><span>Tower C</span><strong id="progressText">0 / 3</strong></div>
+    </section>
+    <div class="progress"><div id="progressBar"></div></div>
+
+    <p id="message"></p>
+
+    <section class="controls">
+      <label>Disks
+        <select id="disks">
+          <option>3</option><option>4</option><option>5</option>
+          <option>6</option><option>7</option><option>8</option>
+        </select>
+      </label>
+      <label>Speed
+        <select id="speed">
+          <option value="slow">Slow</option>
+          <option value="normal" selected>Normal</option>
+          <option value="fast">Fast</option>
+          <option value="veryfast">Very Fast</option>
+        </select>
+      </label>
+      <button id="autoBtn" class="primary">AUTO SOLVE</button>
+      <button id="pauseBtn">PAUSE</button>
+      <button id="resumeBtn">RESUME</button>
+      <button id="resetBtn">RESET</button>
+      <button id="soundBtn">SOUND: ON</button>
+    </section>
+
+    <div id="board">
+      <div class="tower" data-i="0"><span class="label">A</span></div>
+      <div class="tower" data-i="1"><span class="label">B</span></div>
+      <div class="tower" data-i="2"><span class="label">C</span></div>
+      <div class="platform"></div>
+    </div>
+  </main>
+
+  <div id="overlay" class="hidden">
+    <div class="modal">
+      <h2>PUZZLE SOLVED!</h2>
+      <p>Total moves: <strong id="finalMoves"></strong></p>
+      <p>Minimum possible moves: <strong id="finalMin"></strong></p>
+      <p>Total time: <strong id="finalTime"></strong></p>
+      <button id="againBtn" class="primary">PLAY AGAIN</button>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/tau-prolog@0.3.4/modules/core.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
